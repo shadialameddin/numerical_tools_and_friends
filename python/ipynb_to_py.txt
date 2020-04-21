@@ -1,0 +1,3 @@
+pip install p2j nbconvert
+p2j x.py
+jupyter nbconvert --to script x.ipynb 
