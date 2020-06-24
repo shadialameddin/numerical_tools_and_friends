@@ -1,0 +1,67 @@
+ersion: "3.7"  
+
+services:
+    db:
+        image: mariadb
+        command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+        container_name: nextcloud-mariadb
+        networks:
+            - backend
+        volumes:
+            - db:/var/lib/mysql
+            - /etc/localtime:/etc/localtime:ro
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=mypassword
+            - MYSQL_PASSWORD=mypassword
+            - MYSQL_DATABASE=nextcloud
+            - MYSQL_USER=nextcloud
+        restart: unless-stopped
+    app:
+        image: nextcloud:apache
+        container_name: nextcloud-app
+        links:
+            - db
+        environment:
+            - MYSQL_HOST=db
+        networks:
+            - frontend
+            - backend
+        volumes:
+            - nextcloud:/var/www/html
+        restart: unless-stopped
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.nextcloud.rule=Host(`nextcloud.website.com`)
+            - traefik.http.routers.nextcloud.entrypoints=websecure
+            - traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge
+            - traefik.http.services.nextcloud.loadbalancer.server.port=80
+            # Redirect for Caldav and Carddav
+            - traefik.http.middlewares.calcarddav.redirectregex.permanent=true
+            - traefik.http.middlewares.calcarddav.redirectregex.regex=https://(.*)/.well-known/(card|cal)dav
+            - traefik.http.middlewares.calcarddav.redirectregex.replacement=https://$$1/remote.php/dav/
+            - traefik.http.routers.nextcloud.middlewares=calcarddav
+            # Middleware cloud adds additional headers:
+            - traefik.http.middlewares.nextcloud.headers.customFrameOptionsValue=SAMEORIGIN
+            - traefik.http.middlewares.nextcloud.headers.framedeny=true
+            - traefik.http.middlewares.nextcloud.headers.sslredirect=true
+            - traefik.http.middlewares.nextcloud.headers.stsIncludeSubdomains=true
+            - traefik.http.middlewares.nextcloud.headers.stsPreload=true
+            - traefik.http.middlewares.nextcloud.headers.stsSeconds=15552000
+        depends_on:
+            - db
+
+volumes:
+    nextcloud:
+        name: nextcloud_folder
+    db:
+        name: db_folder
+
+networks:
+    backend:
+        driver: bridge
+    frontend:
+        external:
+            name: traefik_proxy
+
