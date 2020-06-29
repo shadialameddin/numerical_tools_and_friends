@@ -1,0 +1,16 @@
+[user]
+	email = shadialameddin@gmail.com
+	name = Shadi Alameddin
+	signingKey = A846EB9C2A409479ACF4E04CA1C75FB52BA5C3C5
+[gpg]
+	program = /usr/bin/gpg2
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[diff]
+  tool = meld
+[difftool "meld"]
+  cmd = meld \"$LOCAL\" \"$REMOTE\"
+[gc]
+	autoDetach = false

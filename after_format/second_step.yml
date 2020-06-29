@@ -1,0 +1,74 @@
+- hosts: localhost
+  vars:
+     user: "{{user}}"
+     secondvar: "{{ val1 | default('val2') }}"
+  tasks:
+    - name: basic tools
+      become: yes
+      package:
+        name: ['texstudio','powertop','gnome-tweak-tool','yakuake','pdfarranger','sshfs','powertop','gmsh','git','detox','paraview-dev*','meld','recoll','wget','gnupg2','python3-pip']
+        state: latest
+
+
+    - name: Ubuntu setup
+      become: yes
+      package:
+        name: ['nextcloud-desktop','nautilus-nextcloud','unison-all-gtk','texlive-full','hdf-compass','yapf3','p7zip-full','p7zip-rar','nfs-common','python3-venv','python3-pip','libopenblas-dev']
+        state: latest
+      when: ansible_distribution == "Ubuntu"
+    - name: Fedora setup
+      become: yes
+      package:
+        name: ['nextcloud-client','unison240-gtk','texlive-scheme-full','python3','python3-wheel']
+        state: latest
+      when: ansible_distribution == "Fedora"
+
+
+    - name: install atom and fslint on Ubuntu
+      become: yes
+      shell: "mkdir -p /tmp/deb && cd /tmp/deb && wget https://atom.io/download/deb -O atom.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-6_amd64.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-glade2_2.24.0-6_amd64.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/f/fslint/fslint_2.46-1_all.deb && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && wget https://www.syntevo.com/downloads/smartgit/smartgit-20_1_1.deb && sudo apt install -y ./*.deb"
+      when: ansible_distribution == "Ubuntu"
+    - name: install atom and fslint on Fedora
+      become: yes
+      shell: "mkdir -p /tmp/rpm && cd /tmp/rpm && wget https://atom.io/download/rpm -O atom.rpm && sudo dnf install -y atom.rpm"
+      when: ansible_distribution == "Fedora"
+
+
+    - name: pyenv on Ubuntu
+      become: yes
+      package:
+        name: ['make','build-essential','libssl-dev','zlib1g-dev','libbz2-dev','libreadline-dev','libsqlite3-dev','curl','llvm','libncurses5-dev','xz-utils','tk-dev','libxml2-dev','libxmlsec1-dev','libffi-dev','liblzma-dev']
+        state: latest
+      when: ansible_distribution == "Ubuntu"
+    - name: pyenv on Fedora
+      become: yes
+      package:
+        name: ['make','gcc','zlib-devel','bzip2','bzip2-devel','readline-devel','sqlite','sqlite-devel','openssl-devel','tk-devel','libffi-devel']
+        state: latest
+      when: ansible_distribution == "Fedora"
+
+
+    - name: Creates an entry like "@reboot /some/job.sh"
+      cron:
+        name: "a job for reboot"
+        special_time: reboot
+        user: "{{user}}"
+        job: /home/{{user}}/.config/autostart/nextcloudignore.sh
+
+
+    - name: Copy files
+      copy: src=./hidden_files/{{ item.src }} dest=/home/{{user}}/{{ item.dest }}
+      with_items:
+        - { src: '_.profile', dest: '.profile' }
+        - { src: '_.bash_aliases', dest: '.bash_aliases' }
+        - { src: '_.bash_logout', dest: '.bash_logout' }
+        - { src: '_.bash_profile', dest: '.bash_profile' }
+        - { src: '_.bashrc', dest: '.bashrc' }
+        - { src: '_.detoxrc', dest: '.detoxrc' }
+        - { src: '_.detox_safe.tbl', dest: '.detox_safe.tbl' }
+        - { src: '_.gitconfig', dest: '.gitconfig' }
+        - { src: '_.hidden', dest: '.hidden' }
+        - { src: '_.style.yapf', dest: '.style.yapf' }
+        - { src: '_.clang_complete', dest: '.clang_complete' }
+        - { src: '_.clang-format', dest: '.clang-format' }
+        - { src: '_.selected_editor', dest: '.selected_editor' }

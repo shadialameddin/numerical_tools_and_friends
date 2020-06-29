@@ -1,0 +1,14 @@
+sequence "myseq" {
+  #iso8859_1;
+  #safe;
+  #lower;
+  #wipeup;
+  safe {
+  filename "/home/alameddin/.detox_safe.tbl";
+  };
+  max_length {
+  length 100;};
+  lower;
+  safe;
+  wipeup;
+};
