@@ -19,18 +19,31 @@
     - name: Fedora setup
       become: yes
       package:
-        name: ['nextcloud-client','unison240-gtk','texlive-scheme-full','python3','python3-wheel']
+        name: ['nextcloud-client','unison240-gtk','texlive-scheme-full','python3','python3-wheel','google-chrome-stable']
         state: latest
       when: ansible_distribution == "Fedora"
 
 
     - name: install atom and fslint on Ubuntu
       become: yes
-      shell: "mkdir -p /tmp/deb && cd /tmp/deb && wget https://atom.io/download/deb -O atom.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-6_amd64.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-glade2_2.24.0-6_amd64.deb && wget http://archive.ubuntu.com/ubuntu/pool/universe/f/fslint/fslint_2.46-1_all.deb && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && wget https://www.syntevo.com/downloads/smartgit/smartgit-20_1_1.deb && sudo apt install -y ./*.deb"
+      shell: "mkdir -p /tmp/deb && cd /tmp/deb && wget {{ item }} && sudo apt install -y ./*.deb"
+      with_items:
+        - https://atom.io/download/deb -O atom.deb
+        - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        - https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
+        - https://zoom.us/client/latest/zoom_amd64.deb
+        - http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-6_amd64.deb
+        - http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-glade2_2.24.0-6_amd64.deb
+        - http://archive.ubuntu.com/ubuntu/pool/universe/f/fslint/fslint_2.46-1_all.deb
       when: ansible_distribution == "Ubuntu"
+
     - name: install atom and fslint on Fedora
       become: yes
-      shell: "mkdir -p /tmp/rpm && cd /tmp/rpm && wget https://atom.io/download/rpm -O atom.rpm && sudo dnf install -y atom.rpm"
+      shell: "mkdir -p /tmp/rpm && cd /tmp/rpm && wget {{ item }} && sudo dnf install -y atom.rpm"
+      with_items:
+        - https://atom.io/download/rpm -O atom.rpm
+        - https://packages.microsoft.com/yumrepos/ms-teams/teams-1.2.00.32451-1.x86_64.rpm
+        - https://zoom.us/client/latest/zoom_x86_64.rpm
       when: ansible_distribution == "Fedora"
 
 

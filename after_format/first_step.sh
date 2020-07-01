@@ -1,17 +1,37 @@
 echo "start with:
 https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot
+copy hidden files to external disk
+/etc/crypttab && /etc/fstab
+sdb1 UUID=75ff611d-0ae0-4847-bf41-d71b74cfeaaa none luks,discard
+UUID=f1cccd0d-0d85-4d68-924e-9636e79bbf9d	/home	auto	defaults	0	0
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+fedora xorg (for yakuake sake)
+nextcloud account
+chrome account
+check powertop
+pycharm
+atom as editor
+notifications yakuake
+tweaks
 "
 
-cd ~ && rm -rf Documents/ Downloads/ Music/ Pictures/ Public/ Templates/ Videos/
+echo "TODO:
+test docker
+"
+
+
+bash -c "cd ~ && rm -rf Documents/ Downloads/ Music/ Pictures/ Public/ Templates/ Videos/"
 
 source /etc/os-release
 
-if [ "$ID"=="ubuntu" ]; then
+if [ "$ID" == "ubuntu" ]; then
   sudo apt install -y ansible snapd
-elif [ "$ID"=="fedora" ]; then
+elif [ "$ID" == "fedora" ]; then
   sudo dnf install -y ansible snapd
-  sudo ln -s /var/lib/snapd/snap /snap
+  sudo dnf install fedora-workstation-repositories
+  sudo dnf config-manager --set-enabled google-chrome
+  sudo ln -sf /var/lib/snapd/snap /snap
 else
   echo "Don't know this OS"
 fi
@@ -34,7 +54,6 @@ sudo snap install datagrip --classic
 sudo snap install beekeeper-studio
 sudo snap install julia --classic
 sudo snap install kubectl --classic
-sudo snap install chromium
 sudo snap refresh
 EOF
 
@@ -49,6 +68,24 @@ Name[en_US]=yakuake
 Name=yakuake
 EOF
 
+cat << EOF | sudo tee /etc/systemd/system/powertop.service
+[Unit]
+Description=PowerTOP auto tune
+[Service]
+Type=idle
+Environment="TERM=dumb"
+ExecStart=/usr/sbin/powertop --auto-tune
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable powertop.service
+sudo systemctl start powertop.service
+# MOUSE="/sys/bus/usb/devices/3-1.2/power/control";
+# if [ -f "$MOUSE" ]; then
+# 	echo 'on' > $MOUSE;
+# fi
+
 cat << EOF | tee ~/.config/autostart/nextcloudignore.sh && chmod a+x ~/.config/autostart/nextcloudignore.sh
 cd ~
 ls -d .* | sed '/.ssh/d' | sed '/.bash./d' | sed '/.detox./d' | sed '/.hidden/d' | sed '/.profile/d' | sed '/.gitconfig/d' | sed '/.gnupg/d' | sed '/.yapf/d' | sed '/.clang/d' | sed '/.selected_editor/d' | sed '$ a .htaccess' > .sync-exclude.lst
@@ -56,24 +93,3 @@ EOF
 
 sudo ansible-playbook -v second_step.yml --extra-vars "user=$USER"
 ./third_step.sh
-
-# dnf install -y atom @c-development patch mercurial cmake lcov clang clang-tools-extra libomp-devel gcc-c++ openblas-devel MUMPS-devel boost-devel vtk-devel hwloc-devel scotch-devel tbb-devel arpack-devel catch-devel viennacl-devel pocl-devel clpeak clinfo opencl-headers kernel-devel clang-devel metis-devel google-chrome-stable yakuake eigen3-devel thunderbird shotwell pdfshuffler inkscape texlive texlive-scheme-full texstudio meld doxygen libtool make htop poppler-cpp git-lfs texlive-collection-latex paraview kernel-headers dkms doxygen-doxywizard libreoffice detox deja-dup graphviz java-openjdk mediawriter vlc pdfgrep arpack system-config-printer dconf-editor hwloc flex freecad netgen gmsh gazebo ipe xfig openmotif freeimage-devel fftw fftw-devel rocm-runtime rocm-runtime-devel elfutils-libelf-devel perf ktouch libnsl ark python3-tkinter fslint intel-gpu-tools recoll gparted gnome-tweaks vim fbreader uncrustify rc nextcloud nextcloud-client libgnome-keyring seahorse powertop tlp docker docker-compose gimp libxcrypt-compat smesh VirtualBox libXi-devel unison evolution fuse-sshfs octave gnome-shell-extension-topicons-plus npm dnf-automatic nano install moreutils moreutils-parallel
-
-# docker
-# sudo dnf install -y grubby && grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0" && reboot
-# dnf config-manager --add-repo=https://download.docker.com/linux/fedora/docker-ce.repo && dnf install docker-ce && systemctl enable --now docker && groupadd docker && usermod -aG docker alameddin && systemctl status docker
-
-#gpg
-# gpg --list-secret-keys --keyid-format LONG
-# gpg2 --list-keys --keyid-format LONG
-# git config --global gpg.program gpg2
-# git config --global user.signingkey ***********
-# git config --global commit.gpgsign true
-# git config --global gpg.program /usr/bin/gpg2
-
-# ssh
-# sudo apt install openssh-server
-# sudo systemctl enable ssh
-# sudo systemctl start ssh
-# sudo systemctl status ssh
-# sudo ufw allow ssh

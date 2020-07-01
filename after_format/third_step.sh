@@ -1,5 +1,54 @@
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+
+cd /packages
+wget https://www.syntevo.com/downloads/smartgit/smartgit-linux-20_1_3.tar.gz
+tar -xvf smartgit-linux-20_1_3.tar.gz
+cat << EOF | tee /home/$USER/.local/share/applications/smartgit.desktop
+[Desktop Entry]
+Type=Application
+Exec=/packages/smartgit/bin/smartgit.sh
+Hidden=false
+NoDisplay=false
+Name=smartgit
+EOF
+
+
+# Permanently hide the Ubuntu Dock
+# sudo apt install dconf-editor
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
+
+gsettings list-recursively org.gnome.settings-daemon.plugins.power
+gsettings set org.gnome.settings-daemon.plugins.power button-power 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
+
+
+gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/','/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>e"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "nautilus"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "home folder"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "<Alt><Ctrl>t"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "gnome-terminal"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "gnome-terminal"
+
+
 sudo ln -sf /usr/bin/yapf3 /usr/local/bin/yapf
 apm install highlight-selected clang-format language-latex teletype
+cat << EOF > ~/.atom/keymap.cson
+'atom-workspace atom-text-editor':
+  'ctrl-left': 'editor:move-to-previous-word-boundary'
+  'ctrl-right': 'editor:move-to-next-word-boundary'
+  'ctrl-shift-left': 'editor:select-to-previous-word-boundary'
+  'ctrl-shift-right': 'editor:select-to-next-word-boundary'
+  'ctrl-backspace': 'editor:delete-to-previous-word-boundary'
+  'ctrl-delete': 'editor:delete-to-next-word-boundary'
+  'alt-ctrl-/': 'editor:toggle-soft-wrap'
+EOF
 
 installation_folder="/packages/pyenv"
 
