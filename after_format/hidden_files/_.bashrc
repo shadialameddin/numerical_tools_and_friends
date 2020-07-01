@@ -118,8 +118,8 @@ fi
 
 export PYENV_ROOT=/packages/pyenv
 export PATH=/packages/pyenv/bin:$PATH
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ########################################### compilers
@@ -140,3 +140,8 @@ export GPG_TTY=$(tty) # to do with gpg signature
 # export ANDROID_PATH=$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
 # export FLUTTER=/packages/flutter/flutter/bin
 # export PATH=$PATH:$ANDROID_PATH:$FLUTTER
+
+
+
+
+alias pipupdate="pip list --outdated --format columns| cut -d' ' -f1| sed 1,2d| xargs -n1 pip install --upgrade"
