@@ -10,6 +10,7 @@ fedora xorg (for yakuake sake)
 nextcloud account
 dropbox account
 chrome account
+ms teams account
 check powertop
 pycharm
 atom as editor
