@@ -1,0 +1,3 @@
+[submodule "numerical-tours"]
+	path = numerical-tours
+	url = https://github.com/gpeyre/numerical-tours.git
