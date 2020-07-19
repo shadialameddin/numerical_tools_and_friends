@@ -1,0 +1,20 @@
+\documentclass{article}
+
+% `mode=tex` means we will use the source file of the figures directly.
+\usepackage[mode=tex]{standalone}
+
+% We need to add TikZ definitions again. You could put them in a separated file
+% and use `\input{...}` command to avoid the duplication.
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}
+
+\begin{document}
+
+%\begin{frame}{TikZ Figure in Beamer}
+  \begin{figure}
+    \centering
+    \includestandalone[width=0.8\linewidth]{./document} % without the `.tex` extension
+  \end{figure}
+%\end{frame}
+
+\end{document}

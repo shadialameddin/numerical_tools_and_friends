@@ -1,0 +1,56 @@
+\documentclass[preview,10pt,border=0pt,graphics]{standalone}
+\usepackage{fontspec}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amstext,amssymb}
+\usepackage{xcolor,color}
+\usepackage{pifont}
+\usepackage{array}
+\usepackage{upgreek}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc, positioning,arrows,decorations.markings, calc}
+\def\arrowparameters{[decoration={markings,mark=at position 1 with {\arrow[scale=.6]{triangle 45}}}, postaction={decorate}, shorten >=3pt, shorten <=0pt,line width=1.5pt,color=uniSblue]}
+
+\parindent=0mm
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}%
+\setlength{\TPVertModule}{1mm}%
+
+\newcommand{\imageBox}[3]{% ARGUMENTS: Height, image file
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{0pt}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+\newcommand{\fimageBox}[4]{% ARGUMENTS: Height, image file, sep (all around), framewidth
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{#4}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+\begin{document}
+\definecolor{uniSblue}{HTML}{004191}
+\definecolor{uniSlightblue}{HTML}{00BEFF}
+\definecolor{uniSgray}{RGB}{62, 68, 76}
+
+\begin{tikzpicture}
+  \useasboundingbox rectangle (11.0 , 5.4);
+   \draw[style=help lines] (0,0) grid(11,8);
+   \node (node name) at ( 8.5, 1.0) [rectangle, fill=uniSlightblue, draw=black, line width=1pt,  minimum width=1.0cm, minimum height=0.3cm] {arbitrary text}; 
+
+   \begin{scope}[shift={(-6,2.5)} ]
+    \node (circle) at (8.5, 1.0) [ circle, draw=uniSblue, minimum width=2cm, text=green] {gute Farbwahl};
+   \end{scope}
+   \begin{scope}[triangle 90 cap reversed-triangle 90 cap, line width=6pt, color=uniSgray, text=uniSgray, shorten >= 3pt, shorten <= 3pt]
+    \draw (node name)   to[out=150,in=30] node[above=1mm,midway, sloped]{$P_{\delta}<\epsilon$} (circle)	;
+    \draw (circle.south) |-  (node name.south west);
+   \end{scope}
+\end{tikzpicture}
+
+\end{document}

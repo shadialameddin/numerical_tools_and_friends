@@ -1,0 +1,20 @@
+
+%-shell-escape
+
+\documentclass{article}
+
+% `mode=build` tells LaTeX to build the image from the source then use it.
+\usepackage[mode=build]{standalone}
+
+%\usepackage{tikz}
+%\usetikzlibrary{calc,positioning}
+
+\begin{document}
+
+\begin{figure}[t]
+  \centering
+  \includestandalone[width=0.8\linewidth]{./document} % without the `.tex` extension
+  \caption{TikZ Figure in Article}
+\end{figure}
+
+\end{document}
