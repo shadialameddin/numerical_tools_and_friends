@@ -1,3 +1,53 @@
 [submodule "numerical-tours"]
 	path = numerical-tours
 	url = https://github.com/gpeyre/numerical-tours.git
+
+
+[submodule "tensor_factorisation/dictionary_learning/spams_python"]
+	path = tensor_factorisation/dictionary_learning/spams_python
+	url = https://github.com/samuelstjean/spams-python.git
+[submodule "tensor_factorisation/dictionary_learning/odl"]
+	path = tensor_factorisation/dictionary_learning/odl
+	url = https://github.com/jsulam/Online-Dictionary-Learning-demo.git
+[submodule "tensor_factorisation/dictionary_learning/ksvd"]
+	path = tensor_factorisation/dictionary_learning/ksvd
+	url = https://github.com/nel215/ksvd.git
+[submodule "tensor_factorisation/dictionary_learning/lyssandra"]
+	path = tensor_factorisation/dictionary_learning/lyssandra
+	url = https://github.com/ektormak/Lyssandra.git
+
+
+[submodule "tensor_factorisation/dictionary_learning/multi_dim_mdla"]
+	path = tensor_factorisation/dictionary_learning/multi_dim_mdla
+	url = https://github.com/sylvchev/mdla.git
+[submodule "tensor_factorisation/dictionary_learning/multi_dim_ktsvd"]
+	path = tensor_factorisation/dictionary_learning/multi_dim_ktsvd
+	url = https://github.com/takshingchan/ktsvd.git
+[submodule "tensor_factorisation/dictionary_learning/multi_dim_tensor_sparsecoding"]
+	path = tensor_factorisation/dictionary_learning/multi_dim_tensor_sparsecoding
+	url = https://github.com/hust512/Tensor_Sparse_Coding.git
+
+
+[submodule "tensor_factorisation/tensorly"]
+	path = tensor_factorisation/tensorly
+	url = https://github.com/tensorly/tensorly.git
+[submodule "tensor_factorisation/pymf"]
+	path = tensor_factorisation/pymf
+	url = https://github.com/cthurau/pymf.git
+[submodule "tensor_factorisation/algebraic_pgd_tools"]
+	path = tensor_factorisation/algebraic_pgd_tools
+	url = https://git.lacan.upc.edu/zlotnik/algebraicPGDtools
+
+
+[submodule "tensor_factorisation/h_matrices/awesome_hmatrices"]
+	path = tensor_factorisation/h_matrices/awesome_hmatrices
+	url = https://github.com/gchavez2/awesome_hierarchical_matrices.git
+[submodule "tensor_factorisation/h_matrices/h2tools"]
+	path = tensor_factorisation/h_matrices/h2tools
+	url = https://bitbucket.org/muxas/h2tools.git
+[submodule "tensor_factorisation/h_matrices/hmatrix1"]
+	path = tensor_factorisation/h_matrices/hmatrix1
+	url = https://github.com/maekke97/HierarchicalMatrices.git
+[submodule "tensor_factorisation/h_matrices/hmatrix2"]
+	path = tensor_factorisation/h_matrices/hmatrix2
+	url = https://github.com/haskell-numerics/hmatrix.git
