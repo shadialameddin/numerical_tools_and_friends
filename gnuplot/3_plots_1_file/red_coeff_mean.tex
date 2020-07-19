@@ -1,0 +1,119 @@
+
+% usage: -> DVI -> PDF -> include in beamer document
+% hint: preview eps-files with 'gv'
+\documentclass[preview,border=0pt,graphics]{standalone}
+\usepackage[latin1]{inputenc}
+% 'french' funktioniert nicht mit package "bilndtext"
+%\usepackage[latin,french,english,german,ngerman]{babel}
+
+%\usepackage{uarial}
+\usepackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage[german,ngerman]{babel}
+\usepackage[german]{babel}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amstext,amssymb}
+\usepackage{xcolor,color}
+%\usepackage{uarial}
+\usepackage{pifont}
+\usepackage{array}
+\usepackage{upgreek}
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usepackage{pstricks}
+
+
+% \fancypagestyle{fancy}{\fancyfoot[OL,ER]{Universit\"at Stuttgart} % inner
+% % \renewcommand{\headrulewidth}{0pt}
+% \fancyfoot[OR,EL]{\thepage} % outer
+% \fancyhead{} % inner 
+% \fancyfoot[C]{}}
+
+
+
+\parindent=0mm
+% \renewcommand{\footskip}{3pt}
+\usepackage[none]{hyphenat}
+\renewcommand{\unitlength}{mm}
+\usepackage{psfrag}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}%
+\setlength{\TPVertModule}{1mm}%
+
+
+\newcommand{\imageBox}[3]{% ARGUMENTS: Height, image file
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{0pt}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+\newcommand{\fimageBox}[4]{% ARGUMENTS: Height, image file, sep (all around), framewidth
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{#4}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+%\input{emma_gen_latex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% \begin{textblock}{20}(0.5,0.5)
+% \end{textblock}
+	\psfrag{circ}[c][c]  [1.0]	{Circular training}
+	\psfrag{rect}[c][c]  [1.0]	{Rectangular training}
+	\psfrag{mix} [c][c][1.0]	{Mixed training}
+	\psfrag{cir}[l][l][0.8]	{\,circ}
+	\psfrag{rec}[l][l][0.8]	{\,rect}
+	\psfrag{mi}[l][l][0.8]	{\,mixed}
+	\psfrag{red coeff}[c][c][0.8]	{number of eigenmodes $h$[-]}
+	\psfrag{mean} [c][c][0.8]	{mean absolute error [$\frac{\mathrm W}{\mathrm m\cdot\mathrm K}$]}
+	
+%	\psfrag{ge}[c][r][0.8]	{\qquad$\mathcal P_{\delta}\geq \epsilon$}
+%	\psfrag{se}[c][r][0.8]	{\qquad$\mathcal P_{\delta}< \epsilon$}
+%	\psfrag{size b}[c][r][0.8]	{size of $\ull B$}
+%	\psfrag{p of sorig}[c][r][0.8]	{\hspace{-4mm}$\mathcal P_{\delta}$ of $\ull S_{\text{orig}}$}
+%	\psfrag{number of snapshots}[c][c][0.8]		{number of snapshots}
+%	\psfrag{number of eigenmodes}[c][c][0.8]	{}	%{number of snapshots}
+%	\psfrag{projection}[c][c][0.8]		{relative projection error}
+%	\psline(62mm,0mm)(62mm,180mm)
+%	\psline(62.5mm,0mm)(62.5mm,180mm)
+%	\psline(128mm,0mm)(128mm,180mm)
+%	\psline(128.5mm,0mm)(128.5mm,180mm)
+%	\psline(0mm,33.5mm)   (328mm,33.5mm)
+	%\psline(0mm,32.5mm) (328mm,32.5mm)
+% \imageBox{60mm}{psfrag_test.eps}{0mm}% without boundary
+\begin{pspicture}(158mm,51mm)
+    %\psframe[fillcolor=uniSlblue40,fillstyle=solid](11mm,31mm)(17.25mm,37mm)
+%    \rput[bl](8mm,00mm){
+%        \includegraphics[height=50mm]{circ_training_mean.eps}}
+%    \rput[bl](62mm,00mm){
+%	    \includegraphics[height=50mm]{rect_training_mean.eps}}
+%    \rput[bl](116mm,00mm){
+%        \includegraphics[height=50mm]{mixed_training_mean.eps}}
+%    \rput[bl](00mm,40mm){
+%        \includegraphics[width=35mm]{b2_incl1.eps}}
+%    \rput[bl](40mm,40mm){
+%        \includegraphics[width=35mm]{b2_incl2.eps}}
+%    \rput[bl](80mm,40mm){
+%        \includegraphics[width=35mm]{b2_incl3.eps}}
+%    \rput[bl](00mm,0mm){
+%        \includegraphics[width=35mm]{b3_incl1.eps}}
+%    \rput[bl](40mm,0mm){
+%        \includegraphics[width=35mm]{b3_incl2.eps}}
+%    \rput[bl](80mm,0mm){
+%        \includegraphics[width=35mm]{b3_incl3.eps}}
+\end{pspicture}
+% \fimageBox{60mm}{bla.eps}{5mm}{2pt}% with boundary
+% % \fimageBox{40mm}{psfrag_test.eps}{20mm}{3pt}%
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+\end{document}

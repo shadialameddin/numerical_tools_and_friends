@@ -1,0 +1,100 @@
+
+% usage: -> DVI -> PDF -> include in beamer document
+% hint: preview eps-files with 'gv'
+\documentclass[preview,border=0pt,graphics]{standalone}
+\usepackage[latin1]{inputenc}
+% 'french' funktioniert nicht mit package "bilndtext"
+%\usepackage[latin,french,english,german,ngerman]{babel}
+
+%\usepackage{uarial}
+\usepackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage[german,ngerman]{babel}
+\usepackage[german]{babel}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amstext,amssymb}
+\usepackage{xcolor,color}
+%\usepackage{uarial}
+\usepackage{pifont}
+\usepackage{array}
+\usepackage{upgreek}
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usepackage{pstricks}
+
+
+% \fancypagestyle{fancy}{\fancyfoot[OL,ER]{Universit\"at Stuttgart} % inner
+% % \renewcommand{\headrulewidth}{0pt}
+% \fancyfoot[OR,EL]{\thepage} % outer
+% \fancyhead{} % inner 
+% \fancyfoot[C]{}}
+
+
+%\input{emma_gen_latex.tex}
+
+\parindent=0mm
+% \renewcommand{\footskip}{3pt}
+\usepackage[none]{hyphenat}
+\renewcommand{\unitlength}{mm}
+\usepackage{psfrag}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}%
+\setlength{\TPVertModule}{1mm}%
+
+
+\newcommand{\imageBox}[3]{% ARGUMENTS: Height, image file
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{0pt}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+\newcommand{\fimageBox}[4]{% ARGUMENTS: Height, image file, sep (all around), framewidth
+\setlength{\fboxsep}{#3}%
+\setlength{\fboxrule}{#4}%
+\fbox{\includegraphics[height=#1]{#2}}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% \begin{textblock}{20}(0.5,0.5)
+% \end{textblock}
+% \imageBox{60mm}{psfrag_test.eps}{0mm}% without boundary
+\begin{pspicture}(152.5mm,51mm)
+	%\psfrag{kappa}		[c][c][1.0]{$\ull{\kappa}$}
+	\psfrag{fp}		[c][c][0.8]{$f_b$[-]}
+	\psfrag{kappa11}	[c][c][0.8]{$\overline{\kappa}_{11}\big[\frac{\rm W}{\rm m\cdot K}\big]$}
+	\psfrag{kappa22}	[c][c][0.8]{$\overline{\kappa}_{22}\big[\frac{\rm W}{\rm m\cdot K}\big]$}
+	\psfrag{kappa12}	[c][c][0.8]{$\overline{\kappa}_{12}\big[\frac{\rm W}{\rm m\cdot K}\big]$}
+	\psfrag{fp}		[c][c][0.8]{$f_b$[-]}
+	\psfrag{minmax}		[c][c][0.8]{\,\,\,min/max}
+	\psfrag{mean}		[c][c][0.8]{mean}
+	\psfrag{k11}	[c][c][0.8]{$\, \,\overline{\kappa}_{11}$}
+	\psfrag{k22}	[c][c][0.8]{$\, \,\overline{\kappa}_{22}$}
+	\psfrag{k12}	[c][c][0.8]{$\, \,\overline{\kappa}_{12}$}
+
+    %\psframe[fillcolor=uniSlblue40,fillstyle=solid](11mm,31mm)(17.25mm,37mm)
+%    \rput[bl](5.5mm,0.5mm){
+%        \includegraphics[height=50mm]{k11range.eps}}
+%    \rput[bl](85mm,0.5mm){
+%        \includegraphics[height=50mm]{k22range.eps}}
+%    \rput[bl](100mm,65mm){
+%        \includegraphics[width=100mm]{SVD_snapshots.eps}}
+%     \rput[bl](20mm,20mm){
+%         \includegraphics[height=20mm]{psfrag_test.eps}
+%     \rput[bl](2.5mm,25mm){\cSred\Large\bf fool the masses}
+\end{pspicture}
+% \fimageBox{60mm}{bla.eps}{5mm}{2pt}% with boundary
+% % \fimageBox{40mm}{psfrag_test.eps}{20mm}{3pt}%
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+%% ATTENTION: NO BLANK LINES AFTER IMAGE!!!
+\end{document}
