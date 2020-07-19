@@ -1,0 +1,9 @@
+Eigen::VectorXd Kdense = Eigen::VectorXd::Zero(n); // global stiffness matrix
+  Eigen::VectorXd Ke = Eigen::VectorXd::Ones(n); // elemental stiffness
+#pragma omp declare reduction(+ : Eigen::VectorXd : omp_out = omp_out + omp_in) \
+                initializer(omp_priv=Eigen::VectorXd::Zero(n))
+
+#pragma omp parallel for reduction(+ : Kdense)
+  for (int i = 0; i < 10; i++) {
+    Kdense += Ke;
+  } 

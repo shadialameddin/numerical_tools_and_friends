@@ -1,0 +1,2 @@
+edit([matlabroot '/extern/examples/mex/explore.c'])
+

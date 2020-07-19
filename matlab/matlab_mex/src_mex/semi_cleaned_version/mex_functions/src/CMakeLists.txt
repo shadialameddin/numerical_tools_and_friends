@@ -1,0 +1,4 @@
+add_subdirectory(include)
+add_subdirectory(compute_time_mode)
+add_subdirectory(compute_kinematic_hardening_space_mode)
+add_subdirectory(compute_stress_space_mode)
