@@ -146,3 +146,4 @@ export GPG_TTY=$(tty) # to do with gpg signature
 
 alias pipupdate="pip list --outdated --format columns| cut -d' ' -f1| sed 1,2d| xargs -n1 pip install --upgrade"
 export EDITOR="/usr/bin/atom"
+alias updatencignore=". ~/.config/autostart/nextcloudignore.sh"
