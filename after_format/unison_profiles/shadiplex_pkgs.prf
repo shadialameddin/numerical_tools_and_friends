@@ -1,0 +1,8 @@
+# Unison preferences
+path = alameddin/z_nosync_packages
+root = /home/
+root = ssh://alameddin@shadiplex//home/
+ignore = Name pyenv
+label = shadiplex_pkgs
+diff = meld
+log = true

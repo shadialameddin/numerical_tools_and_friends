@@ -1,0 +1,23 @@
+# Unison preferences
+path = alameddin
+root = /home/
+root = ssh://alameddin@shadiplex//home/
+ignore = Name alameddin/.?*
+ignore = Name alameddin/snap*
+ignore = Name z_nosync*
+ignorenot = Name .bashrc
+ignorenot = Name .bash_aliases
+ignorenot = Name .profile
+ignorenot = Name .hidden
+ignorenot = Name .atom
+ignorenot = Name .PyCharm*
+ignorenot = Name .gnupg
+ignorenot = Name .thunderbird
+ignorenot = Name .gitconfig
+ignorenot = Name .yapf
+ignorenot = Path alameddin/.local/share/applications/*
+ignorenot = Name alameddin/.unison/*.prf
+ignorenot = Name alameddin/.detox*
+label = shadiplex
+diff = meld
+log = true

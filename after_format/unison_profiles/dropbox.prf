@@ -1,0 +1,4 @@
+# Unison preferences
+root = /home/alameddin/sync
+root = /packages/Dropbox
+ignore = Path {.dropbox*}
