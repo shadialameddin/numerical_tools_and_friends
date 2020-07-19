@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CH5_Add1ToN - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSP340.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/CH5_Add1ToN.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Chapter05\CH5_Add1ToN\Ch5Add_1_to_N.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP340.TMP" 
+Creating temporary file "c:\windows\TEMP\RSP0341.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/CH5_Add1ToN.pdb" /debug /machine:I386 /out:"Debug/CH5_Add1ToN.exe" /pdbtype:sept 
+.\Debug\Ch5Add_1_to_N.obj
+]
+Creating command line "link.exe @c:\windows\TEMP\RSP0341.TMP"
+<h3>Output Window</h3>
+Compiling...
+Ch5Add_1_to_N.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+CH5_Add1ToN.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

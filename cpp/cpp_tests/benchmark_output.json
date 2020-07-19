@@ -1,0 +1,880 @@
+{
+  "context": {
+    "date": "2019-03-19 08:16:47",
+    "host_name": "neumann",
+    "executable": "./a.out",
+    "num_cpus": 8,
+    "mhz_per_cpu": 4000,
+    "cpu_scaling_enabled": true,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 32000000,
+        "num_sharing": 2
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 32000000,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 256000000,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 3,
+        "size": 8192000000,
+        "num_sharing": 8
+      }
+    ],
+    "load_avg": [1.14,1.01,0.64],
+    "library_build_type": "release"
+  },
+  "benchmarks": [
+    {
+      "name": "eigen_dot/8",
+      "run_name": "eigen_dot/8",
+      "run_type": "iteration",
+      "iterations": 457461896,
+      "real_time": 1.4753820326924325e+00,
+      "cpu_time": 1.4725972455638143e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 8.6921254528757828e+10
+    },
+    {
+      "name": "eigen_dot/16",
+      "run_name": "eigen_dot/16",
+      "run_type": "iteration",
+      "iterations": 277869861,
+      "real_time": 2.5121109230494141e+00,
+      "cpu_time": 2.5091174101821712e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0202790788551160e+11
+    },
+    {
+      "name": "eigen_dot/32",
+      "run_name": "eigen_dot/32",
+      "run_type": "iteration",
+      "iterations": 149301646,
+      "real_time": 4.6971893330895149e+00,
+      "cpu_time": 4.6893784613734253e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0918291287797774e+11
+    },
+    {
+      "name": "eigen_dot/64",
+      "run_name": "eigen_dot/64",
+      "run_type": "iteration",
+      "iterations": 100671761,
+      "real_time": 6.9167659538293158e+00,
+      "cpu_time": 6.9073437187614122e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.4824801569070001e+11
+    },
+    {
+      "name": "eigen_dot/128",
+      "run_name": "eigen_dot/128",
+      "run_type": "iteration",
+      "iterations": 50101740,
+      "real_time": 1.4185899890840727e+01,
+      "cpu_time": 1.4098990953208409e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.4525862218061432e+11
+    },
+    {
+      "name": "eigen_dot/256",
+      "run_name": "eigen_dot/256",
+      "run_type": "iteration",
+      "iterations": 24633979,
+      "real_time": 2.9849351012236131e+01,
+      "cpu_time": 2.9788692764575295e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.3750183777352466e+11
+    },
+    {
+      "name": "eigen_dot/512",
+      "run_name": "eigen_dot/512",
+      "run_type": "iteration",
+      "iterations": 10012462,
+      "real_time": 6.6710936131348362e+01,
+      "cpu_time": 6.6590685287994106e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2302020867589671e+11
+    },
+    {
+      "name": "eigen_dot/1024",
+      "run_name": "eigen_dot/1024",
+      "run_type": "iteration",
+      "iterations": 4737643,
+      "real_time": 1.4443811722376043e+02,
+      "cpu_time": 1.4417534014276720e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1363940590517090e+11
+    },
+    {
+      "name": "eigen_dot/2048",
+      "run_name": "eigen_dot/2048",
+      "run_type": "iteration",
+      "iterations": 2295963,
+      "real_time": 3.0225813743418774e+02,
+      "cpu_time": 3.0170153308219665e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0861065127923154e+11
+    },
+    {
+      "name": "eigen_dot/4096",
+      "run_name": "eigen_dot/4096",
+      "run_type": "iteration",
+      "iterations": 904832,
+      "real_time": 7.2145431969690549e+02,
+      "cpu_time": 7.2010501839015433e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 9.1008947759467590e+10
+    },
+    {
+      "name": "eigen_dot/8192",
+      "run_name": "eigen_dot/8192",
+      "run_type": "iteration",
+      "iterations": 459932,
+      "real_time": 1.4589243409888525e+03,
+      "cpu_time": 1.4561737713401117e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 9.0011235320750839e+10
+    },
+    {
+      "name": "eigen_dot/16384",
+      "run_name": "eigen_dot/16384",
+      "run_type": "iteration",
+      "iterations": 211188,
+      "real_time": 3.2834225334820217e+03,
+      "cpu_time": 3.2758832462071687e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 8.0022387947895096e+10
+    },
+    {
+      "name": "eigen_dot/32768",
+      "run_name": "eigen_dot/32768",
+      "run_type": "iteration",
+      "iterations": 68355,
+      "real_time": 9.6365813620656045e+03,
+      "cpu_time": 9.6170429376051361e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 5.4516549775388618e+10
+    },
+    {
+      "name": "eigen_dot/65536",
+      "run_name": "eigen_dot/65536",
+      "run_type": "iteration",
+      "iterations": 33749,
+      "real_time": 2.0212909389803161e+04,
+      "cpu_time": 2.0174651960058072e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.1974923883493935e+10
+    },
+    {
+      "name": "eigen_dot/131072",
+      "run_name": "eigen_dot/131072",
+      "run_type": "iteration",
+      "iterations": 17218,
+      "real_time": 4.0174925601288116e+04,
+      "cpu_time": 4.0096637065861323e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.2302441138774109e+10
+    },
+    {
+      "name": "eigen_dot/262144",
+      "run_name": "eigen_dot/262144",
+      "run_type": "iteration",
+      "iterations": 7734,
+      "real_time": 8.7841061934357494e+04,
+      "cpu_time": 8.7611116627876967e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 4.7874107321506447e+10
+    },
+    {
+      "name": "eigen_dot/524288",
+      "run_name": "eigen_dot/524288",
+      "run_type": "iteration",
+      "iterations": 2068,
+      "real_time": 3.2652908510506438e+05,
+      "cpu_time": 3.2418741972920665e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 2.5875797423006092e+10
+    },
+    {
+      "name": "eigen_dot/1048576",
+      "run_name": "eigen_dot/1048576",
+      "run_type": "iteration",
+      "iterations": 920,
+      "real_time": 7.7855570543761132e+05,
+      "cpu_time": 7.7477767934782535e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 2.1654232494310295e+10
+    },
+    {
+      "name": "eigen_dot/2097152",
+      "run_name": "eigen_dot/2097152",
+      "run_type": "iteration",
+      "iterations": 360,
+      "real_time": 1.9385895694439467e+06,
+      "cpu_time": 1.9314482750000076e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.7372679576417786e+10
+    },
+    {
+      "name": "eigen_dot/4194304",
+      "run_name": "eigen_dot/4194304",
+      "run_type": "iteration",
+      "iterations": 195,
+      "real_time": 3.6400642051609261e+06,
+      "cpu_time": 3.6275483948717834e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.8499784618964947e+10
+    },
+    {
+      "name": "eigen_dot/8388608",
+      "run_name": "eigen_dot/8388608",
+      "run_type": "iteration",
+      "iterations": 95,
+      "real_time": 7.5723645262769423e+06,
+      "cpu_time": 7.5450618210526444e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.7788817531686535e+10
+    },
+    {
+      "name": "std_inner_product/8",
+      "run_name": "std_inner_product/8",
+      "run_type": "iteration",
+      "iterations": 131477882,
+      "real_time": 4.1308312526412259e+00,
+      "cpu_time": 4.1232416871455140e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 3.1043535575188007e+10
+    },
+    {
+      "name": "std_inner_product/16",
+      "run_name": "std_inner_product/16",
+      "run_type": "iteration",
+      "iterations": 241526492,
+      "real_time": 2.8772875068254740e+00,
+      "cpu_time": 2.8730077527064832e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 8.9105224223233719e+10
+    },
+    {
+      "name": "std_inner_product/32",
+      "run_name": "std_inner_product/32",
+      "run_type": "iteration",
+      "iterations": 168116618,
+      "real_time": 4.1841230353653422e+00,
+      "cpu_time": 4.1777175531808544e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2255495817570781e+11
+    },
+    {
+      "name": "std_inner_product/64",
+      "run_name": "std_inner_product/64",
+      "run_type": "iteration",
+      "iterations": 104982227,
+      "real_time": 6.5463584136224870e+00,
+      "cpu_time": 6.4621612570668852e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.5846091721715778e+11
+    },
+    {
+      "name": "std_inner_product/128",
+      "run_name": "std_inner_product/128",
+      "run_type": "iteration",
+      "iterations": 45628116,
+      "real_time": 1.6705835038244004e+01,
+      "cpu_time": 1.6334474734832312e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2537899340177493e+11
+    },
+    {
+      "name": "std_inner_product/256",
+      "run_name": "std_inner_product/256",
+      "run_type": "iteration",
+      "iterations": 16550565,
+      "real_time": 4.0325627432972581e+01,
+      "cpu_time": 4.0221611588486695e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0183580016402094e+11
+    },
+    {
+      "name": "std_inner_product/512",
+      "run_name": "std_inner_product/512",
+      "run_type": "iteration",
+      "iterations": 8713558,
+      "real_time": 8.1585980950811816e+01,
+      "cpu_time": 8.1384526045502909e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0065795548676871e+11
+    },
+    {
+      "name": "std_inner_product/1024",
+      "run_name": "std_inner_product/1024",
+      "run_type": "iteration",
+      "iterations": 4360647,
+      "real_time": 1.6282174250661200e+02,
+      "cpu_time": 1.6242990111329874e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0086812765201259e+11
+    },
+    {
+      "name": "std_inner_product/2048",
+      "run_name": "std_inner_product/2048",
+      "run_type": "iteration",
+      "iterations": 2060894,
+      "real_time": 3.2612723313366087e+02,
+      "cpu_time": 3.2518115536267175e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.0076844693984230e+11
+    },
+    {
+      "name": "std_inner_product/4096",
+      "run_name": "std_inner_product/4096",
+      "run_type": "iteration",
+      "iterations": 882397,
+      "real_time": 9.0099666137314853e+02,
+      "cpu_time": 8.9784149198150135e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 7.2992839588382782e+10
+    },
+    {
+      "name": "std_inner_product/8192",
+      "run_name": "std_inner_product/8192",
+      "run_type": "iteration",
+      "iterations": 351962,
+      "real_time": 1.9468931191569588e+03,
+      "cpu_time": 1.9411537523937202e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 6.7522729633533394e+10
+    },
+    {
+      "name": "std_inner_product/16384",
+      "run_name": "std_inner_product/16384",
+      "run_type": "iteration",
+      "iterations": 140950,
+      "real_time": 4.9383947357018169e+03,
+      "cpu_time": 4.9246218800993129e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 5.3231294987202843e+10
+    },
+    {
+      "name": "std_inner_product/32768",
+      "run_name": "std_inner_product/32768",
+      "run_type": "iteration",
+      "iterations": 71611,
+      "real_time": 8.1375988605013954e+03,
+      "cpu_time": 8.1243092960578897e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 6.4533239798538589e+10
+    },
+    {
+      "name": "std_inner_product/65536",
+      "run_name": "std_inner_product/65536",
+      "run_type": "iteration",
+      "iterations": 40043,
+      "real_time": 1.6520626151856490e+04,
+      "cpu_time": 1.6494581874484931e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 6.3570935473182068e+10
+    },
+    {
+      "name": "std_inner_product/131072",
+      "run_name": "std_inner_product/131072",
+      "run_type": "iteration",
+      "iterations": 21337,
+      "real_time": 3.6784190279970477e+04,
+      "cpu_time": 3.6692436378122533e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.7154885502517464e+10
+    },
+    {
+      "name": "std_inner_product/262144",
+      "run_name": "std_inner_product/262144",
+      "run_type": "iteration",
+      "iterations": 8649,
+      "real_time": 7.3417168458845525e+04,
+      "cpu_time": 7.3233399815007826e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.7273102308442261e+10
+    },
+    {
+      "name": "std_inner_product/524288",
+      "run_name": "std_inner_product/524288",
+      "run_type": "iteration",
+      "iterations": 1849,
+      "real_time": 3.1942363277336699e+05,
+      "cpu_time": 3.1708660356949782e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 2.6455258297159245e+10
+    },
+    {
+      "name": "std_inner_product/1048576",
+      "run_name": "std_inner_product/1048576",
+      "run_type": "iteration",
+      "iterations": 779,
+      "real_time": 9.5262657638025901e+05,
+      "cpu_time": 9.4730758408215723e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 1.7710420862148361e+10
+    },
+    {
+      "name": "std_inner_product/2097152",
+      "run_name": "std_inner_product/2097152",
+      "run_type": "iteration",
+      "iterations": 399,
+      "real_time": 2.0496246240571209e+06,
+      "cpu_time": 2.0392076290726939e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.6454642245163868e+10
+    },
+    {
+      "name": "std_inner_product/4194304",
+      "run_name": "std_inner_product/4194304",
+      "run_type": "iteration",
+      "iterations": 178,
+      "real_time": 4.0457770561935445e+06,
+      "cpu_time": 4.0297305112359524e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.6653437199555349e+10
+    },
+    {
+      "name": "std_inner_product/8388608",
+      "run_name": "std_inner_product/8388608",
+      "run_type": "iteration",
+      "iterations": 77,
+      "real_time": 8.0288263636319172e+06,
+      "cpu_time": 7.9971489220779287e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.6783197275401711e+10
+    },
+    {
+      "name": "eigen_sum/8",
+      "run_name": "eigen_sum/8",
+      "run_type": "iteration",
+      "iterations": 329027215,
+      "real_time": 1.9168290045693492e+00,
+      "cpu_time": 1.9134385433739820e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 3.3447638139006165e+10
+    },
+    {
+      "name": "eigen_sum/16",
+      "run_name": "eigen_sum/16",
+      "run_type": "iteration",
+      "iterations": 290300244,
+      "real_time": 2.4136848400315509e+00,
+      "cpu_time": 2.4090342721172524e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 5.3133324619538658e+10
+    },
+    {
+      "name": "eigen_sum/32",
+      "run_name": "eigen_sum/32",
+      "run_type": "iteration",
+      "iterations": 181578647,
+      "real_time": 3.8817733067267830e+00,
+      "cpu_time": 3.8739929370659905e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 6.6081689914975510e+10
+    },
+    {
+      "name": "eigen_sum/64",
+      "run_name": "eigen_sum/64",
+      "run_type": "iteration",
+      "iterations": 110749743,
+      "real_time": 6.2970175921884319e+00,
+      "cpu_time": 6.2850568059557173e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 8.1463066414106079e+10
+    },
+    {
+      "name": "eigen_sum/128",
+      "run_name": "eigen_sum/128",
+      "run_type": "iteration",
+      "iterations": 67004154,
+      "real_time": 1.0684074870898998e+01,
+      "cpu_time": 1.0663523577956132e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 9.6028296136263535e+10
+    },
+    {
+      "name": "eigen_sum/256",
+      "run_name": "eigen_sum/256",
+      "run_type": "iteration",
+      "iterations": 28648898,
+      "real_time": 2.4450221086998887e+01,
+      "cpu_time": 2.4408508452925552e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 8.3905167902815094e+10
+    },
+    {
+      "name": "eigen_sum/512",
+      "run_name": "eigen_sum/512",
+      "run_type": "iteration",
+      "iterations": 13086987,
+      "real_time": 5.2088954088748714e+01,
+      "cpu_time": 5.2004031867687026e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 7.8763123798196701e+10
+    },
+    {
+      "name": "eigen_sum/1024",
+      "run_name": "eigen_sum/1024",
+      "run_type": "iteration",
+      "iterations": 5166200,
+      "real_time": 1.2575838721014607e+02,
+      "cpu_time": 1.2553022531067285e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 6.5259183433517654e+10
+    },
+    {
+      "name": "eigen_sum/2048",
+      "run_name": "eigen_sum/2048",
+      "run_type": "iteration",
+      "iterations": 2415911,
+      "real_time": 2.7786990414826391e+02,
+      "cpu_time": 2.7738626671263728e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 5.9065649479226974e+10
+    },
+    {
+      "name": "eigen_sum/4096",
+      "run_name": "eigen_sum/4096",
+      "run_type": "iteration",
+      "iterations": 1154251,
+      "real_time": 5.8825983602736210e+02,
+      "cpu_time": 5.8724584774022355e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 5.5799457971638786e+10
+    },
+    {
+      "name": "eigen_sum/8192",
+      "run_name": "eigen_sum/8192",
+      "run_type": "iteration",
+      "iterations": 578390,
+      "real_time": 1.0935025449863419e+03,
+      "cpu_time": 1.0921069364961293e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 6.0008775523634155e+10
+    },
+    {
+      "name": "eigen_sum/16384",
+      "run_name": "eigen_sum/16384",
+      "run_type": "iteration",
+      "iterations": 320949,
+      "real_time": 2.6393224219360213e+03,
+      "cpu_time": 2.6334692957448069e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 4.9771607442618683e+10
+    },
+    {
+      "name": "eigen_sum/32768",
+      "run_name": "eigen_sum/32768",
+      "run_type": "iteration",
+      "iterations": 127502,
+      "real_time": 5.2171471506174021e+03,
+      "cpu_time": 5.2074409264168307e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 5.0340273409568512e+10
+    },
+    {
+      "name": "eigen_sum/65536",
+      "run_name": "eigen_sum/65536",
+      "run_type": "iteration",
+      "iterations": 67358,
+      "real_time": 1.0412616066343518e+04,
+      "cpu_time": 1.0391730544256134e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.0452424431827866e+10
+    },
+    {
+      "name": "eigen_sum/131072",
+      "run_name": "eigen_sum/131072",
+      "run_type": "iteration",
+      "iterations": 33748,
+      "real_time": 2.0936677195736691e+04,
+      "cpu_time": 2.0895001985302857e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.0183101238159637e+10
+    },
+    {
+      "name": "eigen_sum/262144",
+      "run_name": "eigen_sum/262144",
+      "run_type": "iteration",
+      "iterations": 15469,
+      "real_time": 4.0009148554896827e+04,
+      "cpu_time": 3.9925274807679823e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.2526927118272514e+10
+    },
+    {
+      "name": "eigen_sum/524288",
+      "run_name": "eigen_sum/524288",
+      "run_type": "iteration",
+      "iterations": 8490,
+      "real_time": 7.8884554416599698e+04,
+      "cpu_time": 7.8730347467608299e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.3274298093573700e+10
+    },
+    {
+      "name": "eigen_sum/1048576",
+      "run_name": "eigen_sum/1048576",
+      "run_type": "iteration",
+      "iterations": 1754,
+      "real_time": 3.9899808266667376e+05,
+      "cpu_time": 3.9657094868870889e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 2.1152855567805843e+10
+    },
+    {
+      "name": "eigen_sum/2097152",
+      "run_name": "eigen_sum/2097152",
+      "run_type": "iteration",
+      "iterations": 712,
+      "real_time": 1.0816745505692095e+06,
+      "cpu_time": 1.0772330955056136e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.5574359969070011e+10
+    },
+    {
+      "name": "eigen_sum/4194304",
+      "run_name": "eigen_sum/4194304",
+      "run_type": "iteration",
+      "iterations": 291,
+      "real_time": 2.6546479896898302e+06,
+      "cpu_time": 2.6434504879725119e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2693421780612112e+10
+    },
+    {
+      "name": "eigen_sum/8388608",
+      "run_name": "eigen_sum/8388608",
+      "run_type": "iteration",
+      "iterations": 100,
+      "real_time": 5.2629664599953685e+06,
+      "cpu_time": 5.2406390300000533e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2805473457690008e+10
+    },
+    {
+      "name": "std_accumulate/8",
+      "run_name": "std_accumulate/8",
+      "run_type": "iteration",
+      "iterations": 125099298,
+      "real_time": 5.3132713183216556e+00,
+      "cpu_time": 5.3024829124140771e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.2069817302034931e+10
+    },
+    {
+      "name": "std_accumulate/16",
+      "run_name": "std_accumulate/16",
+      "run_type": "iteration",
+      "iterations": 258745322,
+      "real_time": 3.0070170930514428e+00,
+      "cpu_time": 3.0014691511987932e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 4.2645782299270515e+10
+    },
+    {
+      "name": "std_accumulate/32",
+      "run_name": "std_accumulate/32",
+      "run_type": "iteration",
+      "iterations": 169031549,
+      "real_time": 4.6189755795135881e+00,
+      "cpu_time": 4.6087106792117183e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 5.5546988695716240e+10
+    },
+    {
+      "name": "std_accumulate/64",
+      "run_name": "std_accumulate/64",
+      "run_type": "iteration",
+      "iterations": 155972945,
+      "real_time": 4.4501375478575458e+00,
+      "cpu_time": 4.4447649686937787e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1519169261056921e+11
+    },
+    {
+      "name": "std_accumulate/128",
+      "run_name": "std_accumulate/128",
+      "run_type": "iteration",
+      "iterations": 76989755,
+      "real_time": 9.0775465774829840e+00,
+      "cpu_time": 9.0667444778853810e+00,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1294020720420979e+11
+    },
+    {
+      "name": "std_accumulate/256",
+      "run_name": "std_accumulate/256",
+      "run_type": "iteration",
+      "iterations": 39339991,
+      "real_time": 1.7788232793402923e+01,
+      "cpu_time": 1.7767994278392298e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1526343198402411e+11
+    },
+    {
+      "name": "std_accumulate/512",
+      "run_name": "std_accumulate/512",
+      "run_type": "iteration",
+      "iterations": 19882967,
+      "real_time": 3.5242654730553518e+01,
+      "cpu_time": 3.5207428498975879e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1633908452357278e+11
+    },
+    {
+      "name": "std_accumulate/1024",
+      "run_name": "std_accumulate/1024",
+      "run_type": "iteration",
+      "iterations": 9947704,
+      "real_time": 7.0192804590768560e+01,
+      "cpu_time": 7.0123012003573493e+01,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1682327621041908e+11
+    },
+    {
+      "name": "std_accumulate/2048",
+      "run_name": "std_accumulate/2048",
+      "run_type": "iteration",
+      "iterations": 4973738,
+      "real_time": 1.4087073142938780e+02,
+      "cpu_time": 1.4072645463030111e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1642444942595897e+11
+    },
+    {
+      "name": "std_accumulate/4096",
+      "run_name": "std_accumulate/4096",
+      "run_type": "iteration",
+      "iterations": 2397364,
+      "real_time": 2.9261805007551004e+02,
+      "cpu_time": 2.9229805361221509e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 1.1210474922789780e+11
+    },
+    {
+      "name": "std_accumulate/8192",
+      "run_name": "std_accumulate/8192",
+      "run_type": "iteration",
+      "iterations": 1050097,
+      "real_time": 6.6659327756775178e+02,
+      "cpu_time": 6.6583631226449165e+02,
+      "time_unit": "ns",
+      "bytes_per_second": 9.8426593432721939e+10
+    },
+    {
+      "name": "std_accumulate/16384",
+      "run_name": "std_accumulate/16384",
+      "run_type": "iteration",
+      "iterations": 521724,
+      "real_time": 1.4382167506238845e+03,
+      "cpu_time": 1.4356291544954706e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 9.1299343977214798e+10
+    },
+    {
+      "name": "std_accumulate/32768",
+      "run_name": "std_accumulate/32768",
+      "run_type": "iteration",
+      "iterations": 194961,
+      "real_time": 3.6118429942172947e+03,
+      "cpu_time": 3.6046492580567342e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 7.2723857782857300e+10
+    },
+    {
+      "name": "std_accumulate/65536",
+      "run_name": "std_accumulate/65536",
+      "run_type": "iteration",
+      "iterations": 77459,
+      "real_time": 9.0147820137467115e+03,
+      "cpu_time": 8.9951981306239995e+03,
+      "time_unit": "ns",
+      "bytes_per_second": 5.8285319832486000e+10
+    },
+    {
+      "name": "std_accumulate/131072",
+      "run_name": "std_accumulate/131072",
+      "run_type": "iteration",
+      "iterations": 37929,
+      "real_time": 1.8529223470183082e+04,
+      "cpu_time": 1.8487765140130123e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.6717293412816460e+10
+    },
+    {
+      "name": "std_accumulate/262144",
+      "run_name": "std_accumulate/262144",
+      "run_type": "iteration",
+      "iterations": 18722,
+      "real_time": 3.7136546789955079e+04,
+      "cpu_time": 3.7069032581988809e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 5.6574230669806297e+10
+    },
+    {
+      "name": "std_accumulate/524288",
+      "run_name": "std_accumulate/524288",
+      "run_type": "iteration",
+      "iterations": 7708,
+      "real_time": 8.4436474052908728e+04,
+      "cpu_time": 8.4237593539180336e+04,
+      "time_unit": "ns",
+      "bytes_per_second": 4.9791355899182449e+10
+    },
+    {
+      "name": "std_accumulate/1048576",
+      "run_name": "std_accumulate/1048576",
+      "run_type": "iteration",
+      "iterations": 1706,
+      "real_time": 4.1166725557043351e+05,
+      "cpu_time": 4.0908447713950631e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 2.0505808625780029e+10
+    },
+    {
+      "name": "std_accumulate/2097152",
+      "run_name": "std_accumulate/2097152",
+      "run_type": "iteration",
+      "iterations": 741,
+      "real_time": 9.4379049797667132e+05,
+      "cpu_time": 9.4031450337382965e+05,
+      "time_unit": "ns",
+      "bytes_per_second": 1.7842132541616325e+10
+    },
+    {
+      "name": "std_accumulate/4194304",
+      "run_name": "std_accumulate/4194304",
+      "run_type": "iteration",
+      "iterations": 328,
+      "real_time": 2.1539806189028285e+06,
+      "cpu_time": 2.1464685609756215e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.5632389222951725e+10
+    },
+    {
+      "name": "std_accumulate/8388608",
+      "run_name": "std_accumulate/8388608",
+      "run_type": "iteration",
+      "iterations": 162,
+      "real_time": 4.3578201604961781e+06,
+      "cpu_time": 4.3438921419752985e+06,
+      "time_unit": "ns",
+      "bytes_per_second": 1.5449017104159401e+10
+    }
+  ]
+}

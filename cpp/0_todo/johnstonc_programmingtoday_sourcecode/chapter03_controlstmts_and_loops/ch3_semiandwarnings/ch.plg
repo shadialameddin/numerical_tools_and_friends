@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CH3_SemiAndWarnings - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSP80C6.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/CH3_SemiAndWarnings.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\JohnstonC++Book_SourceCode\Chapter03_ifs_switches_Loops\CH3_SemiAndWarnings\Ch3SemiColon_Warnings.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP80C6.TMP" 
+Creating temporary file "c:\windows\TEMP\RSP80C7.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/CH3_SemiAndWarnings.pdb" /debug /machine:I386 /out:"Debug/CH3_SemiAndWarnings.exe" /pdbtype:sept 
+".\Debug\Ch3SemiColon_Warnings.obj"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSP80C7.TMP"
+<h3>Output Window</h3>
+Compiling...
+Ch3SemiColon_Warnings.cpp
+c:\johnstonc++book_sourcecode\chapter03_ifs_switches_loops\ch3_semiandwarnings\ch3semicolon_warnings.cpp(8) : warning C4390: ';' : empty controlled statement found; is this the intent?
+Linking...
+
+
+
+<h3>Results</h3>
+CH3_SemiAndWarnings.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

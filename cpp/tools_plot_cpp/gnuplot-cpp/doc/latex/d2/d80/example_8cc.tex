@@ -1,0 +1,309 @@
+\section{example.\+cc File Reference}
+\label{example_8cc}\index{example.\+cc@{example.\+cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}gnuplot\+\_\+i.\+hpp\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ S\+L\+E\+E\+P\+\_\+\+L\+G\+TH}~2
+\item 
+\#define \textbf{ N\+P\+O\+I\+N\+TS}~50
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ wait\+\_\+for\+\_\+key} ()
+\item 
+int \textbf{ main} (int argc, char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{example_8cc_a046c61fd31a06b2051fa0f57e626ee65}} 
+\index{example.\+cc@{example.\+cc}!N\+P\+O\+I\+N\+TS@{N\+P\+O\+I\+N\+TS}}
+\index{N\+P\+O\+I\+N\+TS@{N\+P\+O\+I\+N\+TS}!example.\+cc@{example.\+cc}}
+\subsubsection{N\+P\+O\+I\+N\+TS}
+{\footnotesize\ttfamily \#define N\+P\+O\+I\+N\+TS~50}
+
+
+
+Definition at line 20 of file example.\+cc.
+
+
+
+Referenced by main().
+
+\mbox{\label{example_8cc_a86c9f48acee3e4ad980ffbaacc293a1a}} 
+\index{example.\+cc@{example.\+cc}!S\+L\+E\+E\+P\+\_\+\+L\+G\+TH@{S\+L\+E\+E\+P\+\_\+\+L\+G\+TH}}
+\index{S\+L\+E\+E\+P\+\_\+\+L\+G\+TH@{S\+L\+E\+E\+P\+\_\+\+L\+G\+TH}!example.\+cc@{example.\+cc}}
+\subsubsection{S\+L\+E\+E\+P\+\_\+\+L\+G\+TH}
+{\footnotesize\ttfamily \#define S\+L\+E\+E\+P\+\_\+\+L\+G\+TH~2}
+
+
+
+Definition at line 19 of file example.\+cc.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{example_8cc_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{example.\+cc@{example.\+cc}!main@{main}}
+\index{main@{main}!example.\+cc@{example.\+cc}}
+\subsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file example.\+cc.
+
+
+
+References Gnuplot\+::cmd(), N\+P\+O\+I\+N\+TS, Gnuplot\+::plot\+\_\+equation(), Gnuplot\+::plot\+\_\+equation3d(), Gnuplot\+::plot\+\_\+image(), Gnuplot\+::plot\+\_\+slope(), Gnuplot\+::plot\+\_\+x(), Gnuplot\+::plot\+\_\+xy(), Gnuplot\+::plot\+\_\+xy\+\_\+err(), Gnuplot\+::plot\+\_\+xyz(), Gnuplot\+::replot(), Gnuplot\+::reset\+\_\+all(), Gnuplot\+::reset\+\_\+plot(), Gnuplot\+::savetops(), Gnuplot\+::set\+\_\+cbrange(), Gnuplot\+::set\+\_\+contour(), Gnuplot\+::set\+\_\+grid(), Gnuplot\+::set\+\_\+hidden3d(), Gnuplot\+::set\+\_\+isosamples(), Gnuplot\+::set\+\_\+legend(), Gnuplot\+::set\+\_\+pointsize(), Gnuplot\+::set\+\_\+samples(), Gnuplot\+::set\+\_\+smooth(), Gnuplot\+::set\+\_\+style(), Gnuplot\+::set\+\_\+surface(), Gnuplot\+::set\+\_\+title(), Gnuplot\+::set\+\_\+xautoscale(), Gnuplot\+::set\+\_\+xlabel(), Gnuplot\+::set\+\_\+xrange(), Gnuplot\+::set\+\_\+ylabel(), Gnuplot\+::set\+\_\+yrange(), Gnuplot\+::set\+\_\+zlabel(), Gnuplot\+::set\+\_\+zrange(), Gnuplot\+::showonscreen(), Gnuplot\+::unset\+\_\+grid(), Gnuplot\+::unset\+\_\+legend(), Gnuplot\+::unset\+\_\+smooth(), Gnuplot\+::unset\+\_\+surface(), Gnuplot\+::unset\+\_\+title(), and wait\+\_\+for\+\_\+key().
+
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{comment}{// if path-variable for gnuplot is not set, do it with:}
+30     \textcolor{comment}{// Gnuplot::set\_GNUPlotPath("C:/program files/gnuplot/bin/");}
+31 
+32     \textcolor{comment}{// set a special standard terminal for showonscreen (normally not needed),}
+33     \textcolor{comment}{//   e.g. Mac users who want to use x11 instead of aqua terminal:}
+34     \textcolor{comment}{// Gnuplot::set\_terminal\_std("x11");}
+35 
+36     cout << \textcolor{stringliteral}{"*** example of gnuplot control through C++ ***"} << endl << endl;
+37 
+38     \textcolor{comment}{//}
+39     \textcolor{comment}{// Using the GnuplotException class}
+40     \textcolor{comment}{//}
+41     \textcolor{keywordflow}{try}
+42     \{
+43         Gnuplot g1(\textcolor{stringliteral}{"lines"});
+44 
+45         \textcolor{comment}{//}
+46         \textcolor{comment}{// Slopes}
+47         \textcolor{comment}{//}
+48         cout << \textcolor{stringliteral}{"*** plotting slopes"} << endl;
+49         g1.set\_title(\textcolor{stringliteral}{"Slopes\(\backslash\)\(\backslash\)nNew Line"});
+50 
+51         cout << \textcolor{stringliteral}{"y = x"} << endl;
+52         g1.plot\_slope(1.0,0.0,\textcolor{stringliteral}{"y=x"});
+53 
+54         cout << \textcolor{stringliteral}{"y = 2*x"} << endl;
+55         g1.plot\_slope(2.0,0.0,\textcolor{stringliteral}{"y=2x"});
+56 
+57         cout << \textcolor{stringliteral}{"y = -x"} << endl;
+58         g1.plot\_slope(-1.0,0.0,\textcolor{stringliteral}{"y=-x"});
+59         g1.unset\_title();
+60 
+61         \textcolor{comment}{//}
+62         \textcolor{comment}{// Equations}
+63         \textcolor{comment}{//}
+64         g1.reset\_plot();
+65         cout << endl << endl << \textcolor{stringliteral}{"*** various equations"} << endl;
+66 
+67         cout << \textcolor{stringliteral}{"y = sin(x)"} << endl;
+68         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)"},\textcolor{stringliteral}{"sine"});
+69 
+70         cout << \textcolor{stringliteral}{"y = log(x)"} << endl;
+71         g1.plot\_equation(\textcolor{stringliteral}{"log(x)"},\textcolor{stringliteral}{"logarithm"});
+72 
+73         cout << \textcolor{stringliteral}{"y = sin(x) * cos(2*x)"} << endl;
+74         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)*cos(2*x)"},\textcolor{stringliteral}{"sine product"});
+75 
+76         \textcolor{comment}{//}
+77         \textcolor{comment}{// Styles}
+78         \textcolor{comment}{//}
+79         g1.reset\_plot();
+80         cout << endl << endl << \textcolor{stringliteral}{"*** showing styles"} << endl;
+81 
+82         cout << \textcolor{stringliteral}{"sine in points"} << endl;
+83         g1.set\_pointsize(0.8).set\_style(\textcolor{stringliteral}{"points"});
+84         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)"},\textcolor{stringliteral}{"points"});
+85 
+86         cout << \textcolor{stringliteral}{"sine in impulses"} << endl;
+87         g1.set\_style(\textcolor{stringliteral}{"impulses"});
+88         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)"},\textcolor{stringliteral}{"impulses"});
+89 
+90         cout << \textcolor{stringliteral}{"sine in steps"} << endl;
+91         g1.set\_style(\textcolor{stringliteral}{"steps"});
+92         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)"},\textcolor{stringliteral}{"steps"});
+93 
+94         \textcolor{comment}{//}
+95         \textcolor{comment}{// Save to ps}
+96         \textcolor{comment}{//}
+97         g1.reset\_all();
+98         cout << endl << endl << \textcolor{stringliteral}{"*** save to ps "} << endl;
+99 
+100         cout << \textcolor{stringliteral}{"y = sin(x) saved to test\_output.ps in working directory"} << endl;
+101         g1.savetops(\textcolor{stringliteral}{"test\_output"});
+102         g1.set\_style(\textcolor{stringliteral}{"lines"}).set\_samples(300).set\_xrange(0,5);
+103         g1.plot\_equation(\textcolor{stringliteral}{"sin(12*x)*exp(-x)"}).plot\_equation(\textcolor{stringliteral}{"exp(-x)"});
+104 
+105         g1.showonscreen(); \textcolor{comment}{// window output}
+106 
+107 
+108         \textcolor{comment}{//}
+109         \textcolor{comment}{// User defined 1d, 2d and 3d point sets}
+110         \textcolor{comment}{//}
+111         std::vector<double> x, y, y2, dy, z;
+112 
+113         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPOINTS; i++)  \textcolor{comment}{// fill double arrays x, y, z}
+114         \{
+115             x.push\_back((\textcolor{keywordtype}{double})i);             \textcolor{comment}{// x[i] = i}
+116             y.push\_back((\textcolor{keywordtype}{double})i * (\textcolor{keywordtype}{double})i); \textcolor{comment}{// y[i] = i^2}
+117             z.push\_back( x[i]*y[i] );           \textcolor{comment}{// z[i] = x[i]*y[i] = i^3}
+118             dy.push\_back((\textcolor{keywordtype}{double})i * (\textcolor{keywordtype}{double})i / (\textcolor{keywordtype}{double}) 10); \textcolor{comment}{// dy[i] = i^2 / 10}
+119         \}
+120         y2.push\_back(0.00); y2.push\_back(0.78); y2.push\_back(0.97); y2.push\_back(0.43);
+121         y2.push\_back(-0.44); y2.push\_back(-0.98); y2.push\_back(-0.77); y2.push\_back(0.02);
+122 
+123 
+124         g1.reset\_all();
+125         cout << endl << endl << \textcolor{stringliteral}{"*** user-defined lists of doubles"} << endl;
+126         g1.set\_style(\textcolor{stringliteral}{"impulses"}).plot\_x(y,\textcolor{stringliteral}{"user-defined doubles"});
+127 
+128         g1.reset\_plot();
+129         cout << endl << endl << \textcolor{stringliteral}{"*** user-defined lists of points (x,y)"} << endl;
+130         g1.set\_grid();
+131         g1.set\_style(\textcolor{stringliteral}{"points"}).plot\_xy(x,y,\textcolor{stringliteral}{"user-defined points 2d"});
+132 
+133         g1.reset\_plot();
+134         cout << endl << endl << \textcolor{stringliteral}{"*** user-defined lists of points (x,y,z)"} << endl;
+135         g1.unset\_grid();
+136         g1.plot\_xyz(x,y,z,\textcolor{stringliteral}{"user-defined points 3d"});
+137 
+138         g1.reset\_plot();
+139         cout << endl << endl << \textcolor{stringliteral}{"*** user-defined lists of points (x,y,dy)"} << endl;
+140         g1.plot\_xy\_err(x,y,dy,\textcolor{stringliteral}{"user-defined points 2d with errorbars"});
+141 
+142 
+143         \textcolor{comment}{//}
+144         \textcolor{comment}{// Multiple output screens}
+145         \textcolor{comment}{//}
+146         cout << endl << endl;
+147         cout << \textcolor{stringliteral}{"*** multiple output windows"} << endl;
+148 
+149         g1.reset\_plot();
+150         g1.set\_style(\textcolor{stringliteral}{"lines"});
+151         cout << \textcolor{stringliteral}{"window 1: sin(x)"} << endl;
+152         g1.set\_grid().set\_samples(600).set\_xrange(0,300);
+153         g1.plot\_equation(\textcolor{stringliteral}{"sin(x)+sin(x*1.1)"});
+154 
+155         g1.set\_xautoscale().replot();
+156 
+157         Gnuplot g2;
+158         cout << \textcolor{stringliteral}{"window 2: user defined points"} << endl;
+159         g2.plot_x(y2,\textcolor{stringliteral}{"points"});
+160         g2.set_smooth().plot_x(y2,\textcolor{stringliteral}{"cspline"});
+161         g2.set_smooth(\textcolor{stringliteral}{"bezier"}).plot_x(y2,\textcolor{stringliteral}{"bezier"});
+162         g2.unset_smooth();
+163 
+164         Gnuplot g3(\textcolor{stringliteral}{"lines"});
+165         cout << \textcolor{stringliteral}{"window 3: log(x)/x"} << endl;
+166         g3.set\_grid();
+167         g3.plot\_equation(\textcolor{stringliteral}{"log(x)/x"},\textcolor{stringliteral}{"log(x)/x"});
+168 
+169         Gnuplot g4(\textcolor{stringliteral}{"lines"});
+170         cout << \textcolor{stringliteral}{"window 4: splot x*x+y*y"} << endl;
+171         g4.set\_zrange(0,100);
+172         g4.set\_xlabel(\textcolor{stringliteral}{"x-axis"}).set\_ylabel(\textcolor{stringliteral}{"y-axis"}).set\_zlabel(\textcolor{stringliteral}{"z-axis"});
+173         g4.plot\_equation3d(\textcolor{stringliteral}{"x*x+y*y"});
+174 
+175         Gnuplot g5(\textcolor{stringliteral}{"lines"});
+176         cout << \textcolor{stringliteral}{"window 5: splot with hidden3d"} << endl;
+177         g5.set\_isosamples(25).set\_hidden3d();
+178         g5.plot\_equation3d(\textcolor{stringliteral}{"x*y*y"});
+179 
+180         Gnuplot g6(\textcolor{stringliteral}{"lines"});
+181         cout << \textcolor{stringliteral}{"window 6: splot with contour"} << endl;
+182         g6.set\_isosamples(60).set\_contour();
+183         g6.unset\_surface().plot\_equation3d(\textcolor{stringliteral}{"sin(x)*sin(y)+4"});
+184 
+185         g6.set\_surface().replot();
+186 
+187         Gnuplot g7(\textcolor{stringliteral}{"lines"});
+188         cout << \textcolor{stringliteral}{"window 7: set\_samples"} << endl;
+189         g7.set\_xrange(-30,20).set\_samples(40);
+190         g7.plot\_equation(\textcolor{stringliteral}{"besj0(x)*0.12e1"}).plot\_equation(\textcolor{stringliteral}{"(x**besj0(x))-2.5"});
+191 
+192         g7.set\_samples(400).replot();
+193 
+194         Gnuplot g8(\textcolor{stringliteral}{"filledcurves"});
+195         cout << \textcolor{stringliteral}{"window 8: filledcurves"} << endl;
+196         g8.set\_legend(\textcolor{stringliteral}{"outside right top"}).set\_xrange(-5,5);
+197         g8.plot\_equation(\textcolor{stringliteral}{"x*x"}).plot\_equation(\textcolor{stringliteral}{"-x*x+4"});
+198 
+199         \textcolor{comment}{//}
+200         \textcolor{comment}{// Plot an image}
+201         \textcolor{comment}{//}
+202         Gnuplot g9;
+203         cout << \textcolor{stringliteral}{"window 9: plot\_image"} << endl;
+204         \textcolor{keyword}{const} \textcolor{keywordtype}{int} iWidth  = 255;
+205         \textcolor{keyword}{const} \textcolor{keywordtype}{int} iHeight = 255;
+206         g9.set_xrange(0,iWidth).set_yrange(0,iHeight).set_cbrange(0,255);
+207         g9.cmd(\textcolor{stringliteral}{"set palette gray"});
+208         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ucPicBuf[iWidth*iHeight];
+209         \textcolor{comment}{// generate a greyscale image}
+210         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} iIndex = 0; iIndex < iHeight*iWidth; iIndex++)
+211         \{
+212             ucPicBuf[iIndex] = iIndex%255;
+213         \}
+214         g9.plot_image(ucPicBuf,iWidth,iHeight,\textcolor{stringliteral}{"greyscale"});
+215 
+216         g9.set_pointsize(0.6).unset_legend().plot_slope(0.8,20);
+217 
+218         \textcolor{comment}{//}
+219         \textcolor{comment}{// manual control}
+220         \textcolor{comment}{//}
+221         Gnuplot g10;
+222         cout << \textcolor{stringliteral}{"window 10: manual control"} << endl;
+223         g10.cmd(\textcolor{stringliteral}{"set samples 400"}).cmd(\textcolor{stringliteral}{"plot abs(x)/2"}); \textcolor{comment}{// either with cmd()}
+224         g10 << \textcolor{stringliteral}{"replot sqrt(x)"} << \textcolor{stringliteral}{"replot sqrt(-x)"};    \textcolor{comment}{// or with <<}
+225 
+226         wait_for_key();
+227 
+228     \}
+229     \textcolor{keywordflow}{catch} (GnuplotException ge)
+230     \{
+231         cout << ge.what() << endl;
+232     \}
+233 
+234 
+235     cout << endl << \textcolor{stringliteral}{"*** end of gnuplot example"} << endl;
+236 
+237     \textcolor{keywordflow}{return} 0;
+238 \}
+\end{DoxyCode}
+\mbox{\label{example_8cc_a621288a08ecc9633729935737256e831}} 
+\index{example.\+cc@{example.\+cc}!wait\+\_\+for\+\_\+key@{wait\+\_\+for\+\_\+key}}
+\index{wait\+\_\+for\+\_\+key@{wait\+\_\+for\+\_\+key}!example.\+cc@{example.\+cc}}
+\subsubsection{wait\+\_\+for\+\_\+key()}
+{\footnotesize\ttfamily void wait\+\_\+for\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 242 of file example.\+cc.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+243 \{
+244 \textcolor{preprocessor}{#if defined(WIN32) || defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined(\_\_TOS\_WIN\_\_)  // every keypress
+       registered, also arrow keys}
+245     cout << endl << \textcolor{stringliteral}{"Press any key to continue..."} << endl;
+246 
+247     FlushConsoleInputBuffer(GetStdHandle(STD\_INPUT\_HANDLE));
+248     \_getch();
+249 \textcolor{preprocessor}{#elif defined(unix) || defined(\_\_unix) || defined(\_\_unix\_\_) || defined(\_\_APPLE\_\_)}
+250     cout << endl << \textcolor{stringliteral}{"Press ENTER to continue..."} << endl;
+251 
+252     std::cin.clear();
+253     std::cin.ignore(std::cin.rdbuf()->in\_avail());
+254     std::cin.get();
+255 \textcolor{preprocessor}{#endif}
+256     \textcolor{keywordflow}{return};
+257 \}
+\end{DoxyCode}

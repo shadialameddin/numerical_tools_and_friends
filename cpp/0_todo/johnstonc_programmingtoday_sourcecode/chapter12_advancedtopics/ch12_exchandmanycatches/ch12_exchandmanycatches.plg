@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Ch12_ExcHandManyCatches - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSP6070.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Ch12_ExcHandManyCatches.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\CBook_SourceCode\Chapter12\Ch12_ExcHandManyCatches\Ch12ExcHandManyCatch.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP6070.TMP" 
+Creating temporary file "c:\windows\TEMP\RSP6071.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/Ch12_ExcHandManyCatches.pdb" /debug /machine:I386 /out:"Debug/Ch12_ExcHandManyCatches.exe" /pdbtype:sept 
+.\Debug\Ch12ExcHandManyCatch.obj
+]
+Creating command line "link.exe @c:\windows\TEMP\RSP6071.TMP"
+<h3>Output Window</h3>
+Compiling...
+Ch12ExcHandManyCatch.cpp
+c:\cbook_sourcecode\chapter12\ch12_exchandmanycatches\ch12exchandmanycatch.cpp(36) : warning C4101: 'i' : unreferenced local variable
+Linking...
+
+
+
+<h3>Results</h3>
+Ch12_ExcHandManyCatches.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

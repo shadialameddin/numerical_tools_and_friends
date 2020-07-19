@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CH4_WriteHelloAndPtrs - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSP2F5.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/CH4_WriteHelloAndPtrs.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Chapter04\CH4_WriteHelloAndPtrs\CH4Hello.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSP2F5.TMP" 
+Creating temporary file "c:\windows\TEMP\RSP02F6.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/CH4_WriteHelloAndPtrs.pdb" /debug /machine:I386 /out:"Debug/CH4_WriteHelloAndPtrs.exe" /pdbtype:sept 
+.\Debug\CH4Hello.obj
+]
+Creating command line "link.exe @c:\windows\TEMP\RSP02F6.TMP"
+<h3>Output Window</h3>
+Compiling...
+CH4Hello.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+CH4_WriteHelloAndPtrs.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

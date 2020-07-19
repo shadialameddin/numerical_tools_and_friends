@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Ch11_CXYPointsPart2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSPD272.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Ch11_CXYPointsPart2.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Chapter11Projects\Ch11_CXYPointsPart2\Ch11CXYPointsPart2.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSPD272.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSPD273.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/Ch11_CXYPointsPart2.pdb" /debug /machine:I386 /out:"Debug/Ch11_CXYPointsPart2.exe" /pdbtype:sept 
+.\Debug\Ch11CXYPointsPart2.obj
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSPD273.TMP"
+<h3>Output Window</h3>
+Compiling...
+Ch11CXYPointsPart2.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Ch11_CXYPointsPart2.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
