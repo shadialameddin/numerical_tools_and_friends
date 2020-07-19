@@ -19,7 +19,7 @@
     - name: Fedora setup
       become: yes
       package:
-        name: ['nextcloud-client','unison240-gtk','texlive-scheme-full','python3','python3-wheel','google-chrome-stable']
+        name: ['nextcloud-client','unison240-gtk','texlive-scheme-full','python3','python3-wheel','google-chrome-stable','gnome-shell-extension-topicons-plus','hugo']
         state: latest
       when: ansible_distribution == "Fedora"
 
@@ -39,11 +39,13 @@
 
     - name: install atom and fslint on Fedora
       become: yes
-      shell: "mkdir -p /tmp/rpm && cd /tmp/rpm && wget {{ item }} && sudo dnf install -y atom.rpm"
+      shell: "mkdir -p /tmp/rpm && cd /tmp/rpm && wget {{ item }} && sudo dnf install -y *.rpm"
       with_items:
         - https://atom.io/download/rpm -O atom.rpm
         - https://packages.microsoft.com/yumrepos/ms-teams/teams-1.2.00.32451-1.x86_64.rpm
         - https://zoom.us/client/latest/zoom_x86_64.rpm
+        - https://kojipkgs.fedoraproject.org//packages/fslint/2.46/7.fc31/noarch/fslint-2.46-7.fc31.noarch.rpm
+        - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm
       when: ansible_distribution == "Fedora"
 
 

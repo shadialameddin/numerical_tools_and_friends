@@ -8,6 +8,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 fedora xorg (for yakuake sake)
 nextcloud account
+dropbox account
 chrome account
 check powertop
 pycharm
@@ -17,6 +18,7 @@ tweaks
 "
 
 echo "TODO:
+unison sync and dropbox
 test docker
 "
 
@@ -32,6 +34,7 @@ elif [ "$ID" == "fedora" ]; then
   sudo dnf install fedora-workstation-repositories
   sudo dnf config-manager --set-enabled google-chrome
   sudo ln -sf /var/lib/snapd/snap /snap
+  # sudo dnf install -y grubby && grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0" && reboot
 else
   echo "Don't know this OS"
 fi
