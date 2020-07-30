@@ -1,0 +1,7 @@
+! ANSYS APDL script for exporting the FE model geometry
+
+/OUTPUT,model,txt
+ETLIST
+NLIST,,,,COORD
+ELIST
+/OUTPUT

@@ -1,0 +1,28 @@
+#!/bin/bash
+# routine to update the (p)xdmf files 
+#
+# "int"     -> "Int"
+# "float"   -> "Float"
+# "Origin_DxDyDz" -> "ORIGIN_DXDYDZ"
+#
+#
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+#
+# Principal developer : Felipe Bordeu (Felipe.Bordeu@ec-nantes.fr)
+#
+
+
+for var in "$@"
+do
+    echo Working on file $var
+    sed -i~ 's/int/Int/' $var
+    sed -i~ 's/float/Float/' $var
+    sed -i~ 's/Origin_DxDyDz/ORIGIN_DXDYDZ/' $var
+    sed -i~ 's/quad_9/QUADRILATERAL_9/' $var
+    #if NodesPerElement not present in topologyType Polyline add NodesPerElement="2"
+    #<Topology TopologyType="Polyline" Dimensions="192" NodesPerElement="2"> TopologyType="Polyline"
+    sed -i~ -e '/NodesPerElement/b; {s/TopologyType="Polyline"/TopologyType="Polyline" NodesPerElement="2"/}' $var
+    echo "Done file compatible with version 2.0"
+done
+

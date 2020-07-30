@@ -51,3 +51,22 @@
 [submodule "tensor_factorisation/h_matrices/hmatrix2"]
 	path = tensor_factorisation/h_matrices/hmatrix2
 	url = https://github.com/haskell-numerics/hmatrix.git
+
+[submodule "fem/rbnics"]
+	path = fem/rbnics
+	url = https://gitlab.com/RBniCS/RBniCS.git
+[submodule "fem/pymor"]
+	path = fem/pymor
+	url = https://github.com/pymor/pymor.git
+[submodule "fem/ngsolve"]
+	path = fem/ngsolve
+	url = https://github.com/NGSolve/ngsolve.git
+[submodule "fem/fenics/fenics_tutorial"]
+	path = fem/fenics/fenics_tutorial
+	url = https://github.com/hplgit/fenics-tutorial.git
+[submodule "fem/fenics/dolfinx"]
+	path = fem/fenics/dolfinx
+	url = https://github.com/FEniCS/dolfinx.git
+[submodule "fem/tools_mesh/intermediate_mesh_representation"]
+	path = fem/tools_mesh/intermediate_mesh_representation
+	url = https://github.com/dbeurle/imr.git

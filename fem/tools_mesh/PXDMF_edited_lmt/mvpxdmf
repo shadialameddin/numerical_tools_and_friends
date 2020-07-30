@@ -1,0 +1,68 @@
+#!/bin/bash
+# routine to change the name of a pxdmf file 
+#
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+#
+# Principal developer : Felipe Bordeu (Felipe.Bordeu@ec-nantes.fr)
+#
+
+if [ -e "$1" ]
+then
+	ofilename=$(basename $1)
+	extension="${ofilename##*.}"
+	ofilebasename=$(basename $ofilename .$extension)
+	opath=$(dirname $1)
+
+	ffilename=$(basename $2)
+	oextension="${ofilename##*.}"
+	ffilebasename=$(basename $ffilename .$oextension)
+	fpath=$(dirname $2)
+
+
+   	#moving the pxdmf file
+	cat $1 | sed s/^$ofilebasename.h5/$ffilebasename.h5/ | sed s/^$ofilebasename.bin/$ffilebasename.bin/ > $2
+    echo "s/^$ofilebasename.h5/$ffilebasename.h5/       s/^$ofilebasename.bin/$ffilebasename.bin/"
+	echo "$1  -->  $2"
+	rm $1
+
+	# now we move the h5 file if exist
+	if [ -e "$opath/$ofilebasename.h5" ]
+	then
+		mv $opath/$ofilebasename.h5 $fpath/$ffilebasename.h5
+		echo "$opath/$ofilebasename.h5  -->  $fpath/$ffilebasename.h5"
+	fi
+
+
+	# now we move the bin file if exist
+	if [ -e "$opath/$ofilebasename.bin" ]
+	then
+		mv $opath/$ofilebasename.bin $fpath/$ffilebasename.bin
+		echo "$opath/$ofilebasename.bin  -->  $fpath/$ffilebasename.bin"
+	fi
+
+else
+	echo "mvpxdmf"
+	echo ""
+	echo "NAME "
+	echo "    mvpxdmf - move (rename) pxdmf/xdmf file and theis binary(.bin)/HDF5(.h5) subfiles"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "    mvpxdmf SOURCE DEST"
+	echo "	  It will move/rename also the file SOURCE.bin and SOURCE.h5 if present"
+	echo ""
+	echo "DESCRIPTION"
+	echo "    Rename SOURCE to DEST"
+	echo ""	
+	echo "    usage :  mvpxdmf file.pxdmf path/to/the/newfilename.pxdmf"
+	echo "    usage :  mvpxdmf file.xdmf path/to/the/newfilename.xdmf"	
+	echo ""
+	echo "AUTHOR"
+	echo "     Written by Felipe Bordeu."
+	echo ""
+	echo "REPORTING BUGS"
+	echo ""
+	echo "       Report mv bugs to felipe.bordeu@ec-nantes.fr"
+	echo ""
+fi
+
