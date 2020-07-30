@@ -7,3 +7,5 @@ __pypackages__/
 .spyproject
 
 .idea*
+
+cmake-build-debug/

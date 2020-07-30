@@ -1,0 +1,6 @@
+[requires]
+fmt/7.0.1
+eigen/3.3.7
+
+[generators]
+cmake
