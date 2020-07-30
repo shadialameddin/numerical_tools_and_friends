@@ -150,6 +150,11 @@ start
 0x7b		_	# {
 0x7d		_	# }
 
+# german letters
+# https://www.barcodefaq.com/ascii-chart-char-set/
+0xdc		_	#
+0xfc		_	#
+
 #
 # Other
 #
