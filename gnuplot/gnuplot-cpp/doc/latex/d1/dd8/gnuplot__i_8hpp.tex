@@ -1,0 +1,74 @@
+\section{gnuplot\+\_\+i.\+hpp File Reference}
+\label{gnuplot__i_8hpp}\index{gnuplot\+\_\+i.\+hpp@{gnuplot\+\_\+i.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Gnuplot\+Exception}
+\begin{DoxyCompactList}\small\item\em A C++ interface to gnuplot. \end{DoxyCompactList}\item 
+class \textbf{ Gnuplot}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Container $>$ }\\void \textbf{ stringtok} (Container \&container, std\+::string const \&in, const char $\ast$const delimiters=\char`\"{} \textbackslash{}\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{gnuplot__i_8hpp_aa638112596d8394216cd0954f18fb676}} 
+\index{gnuplot\+\_\+i.\+hpp@{gnuplot\+\_\+i.\+hpp}!stringtok@{stringtok}}
+\index{stringtok@{stringtok}!gnuplot\+\_\+i.\+hpp@{gnuplot\+\_\+i.\+hpp}}
+\subsubsection{stringtok()}
+{\footnotesize\ttfamily template$<$typename Container $>$ \\
+void stringtok (\begin{DoxyParamCaption}\item[{Container \&}]{container,  }\item[{std\+::string const \&}]{in,  }\item[{const char $\ast$const}]{delimiters = {\ttfamily \char`\"{}~\textbackslash{}t\textbackslash{}n\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 905 of file gnuplot\+\_\+i.\+hpp.
+
+
+
+Referenced by Gnuplot\+::cmd().
+
+
+\begin{DoxyCode}
+908 \{
+909     \textcolor{keyword}{const} std::string::size\_type len = in.length();
+910           std::string::size\_type i = 0;
+911 
+912     \textcolor{keywordflow}{while} ( i < len )
+913     \{
+914         \textcolor{comment}{// eat leading whitespace}
+915         i = in.find\_first\_not\_of (delimiters, i);
+916 
+917         \textcolor{keywordflow}{if} (i == std::string::npos)
+918             \textcolor{keywordflow}{return};   \textcolor{comment}{// nothing left but white space}
+919 
+920         \textcolor{comment}{// find the end of the token}
+921         std::string::size\_type j = in.find\_first\_of (delimiters, i);
+922 
+923         \textcolor{comment}{// push token}
+924         \textcolor{keywordflow}{if} (j == std::string::npos)
+925         \{
+926             container.push\_back (in.substr(i));
+927             \textcolor{keywordflow}{return};
+928         \}
+929         \textcolor{keywordflow}{else}
+930             container.push\_back (in.substr(i, j-i));
+931 
+932         \textcolor{comment}{// set up for next loop}
+933         i = j + 1;
+934     \}
+935 
+936     \textcolor{keywordflow}{return};
+937 \}
+\end{DoxyCode}

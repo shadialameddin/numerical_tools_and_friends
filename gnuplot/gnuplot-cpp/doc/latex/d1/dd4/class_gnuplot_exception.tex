@@ -1,0 +1,66 @@
+\section{Gnuplot\+Exception Class Reference}
+\label{class_gnuplot_exception}\index{Gnuplot\+Exception@{Gnuplot\+Exception}}
+
+
+A C++ interface to gnuplot.  
+
+
+
+
+{\ttfamily \#include $<$gnuplot\+\_\+i.\+hpp$>$}
+
+Inheritance diagram for Gnuplot\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/dd4/class_gnuplot_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gnuplot\+Exception} (const std\+::string \&msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A C++ interface to gnuplot. 
+
+The interface uses pipes and so won\textquotesingle{}t run on a system that doesn\textquotesingle{}t have P\+O\+S\+IX pipe support Tested on Windows (Min\+GW and Visual C++) and Linux (G\+CC)
+
+Version history\+: 0. C interface by N. Devillard (27/01/03)
+\begin{DoxyEnumerate}
+\item C++ interface\+: direct translation from the C interface by Rajarshi Guha (07/03/03)
+\item corrections for Win32 compatibility by V. Chyzhdzenka (20/05/03)
+\item some member functions added, corrections for Win32 and Linux compatibility by M. Burgis (10/03/08)
+\end{DoxyEnumerate}
+
+Requirements\+:
+\begin{DoxyItemize}
+\item gnuplot has to be installed ({\tt http\+://www.\+gnuplot.\+info/download.\+html})
+\item for Windows\+: set Path-\/\+Variable for \doxyref{Gnuplot}{p.}{d3/d27/class_gnuplot} path (e.\+g. C\+:/program files/gnuplot/bin) or set \doxyref{Gnuplot}{p.}{d3/d27/class_gnuplot} path with\+: \doxyref{Gnuplot\+::set\+\_\+\+G\+N\+U\+Plot\+Path(const std\+::string \&path)}{p.}{d3/d27/class_gnuplot_a67cae885c26ced821e335d98986f1967}; 
+\end{DoxyItemize}
+
+Definition at line 60 of file gnuplot\+\_\+i.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_gnuplot_exception_a8b324a9ef4d3f75079d41ecd61c62d44}} 
+\index{Gnuplot\+Exception@{Gnuplot\+Exception}!Gnuplot\+Exception@{Gnuplot\+Exception}}
+\index{Gnuplot\+Exception@{Gnuplot\+Exception}!Gnuplot\+Exception@{Gnuplot\+Exception}}
+\subsubsection{Gnuplot\+Exception()}
+{\footnotesize\ttfamily Gnuplot\+Exception\+::\+Gnuplot\+Exception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 63 of file gnuplot\+\_\+i.\+hpp.
+
+
+\begin{DoxyCode}
+63 : std::runtime\_error(msg)\{\}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ gnuplot\+\_\+i.\+hpp}\end{DoxyCompactItemize}
