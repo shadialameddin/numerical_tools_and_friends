@@ -13,3 +13,6 @@ nvprof python tensorflow_gpu_test.py
 # gpustat -cp -i 1
 
 # TF_CPP_MIN_LOG_LEVEL=2
+
+# Python bindings to the NVIDIA Management Library
+# https://github.com/nicolargo/nvidia-ml-py3
